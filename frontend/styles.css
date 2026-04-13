@@ -1,15 +1,23 @@
-/* Golf Course Crowd Finder - Styles */
+/* Golf Course Crowd Finder - Masters Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
 
 :root {
-  --green: #2ecc71;
-  --yellow: #f1c40f;
+  --masters-green: #006747;
+  --masters-dark-green: #004d35;
+  --masters-yellow: #f2c75c;
+  --masters-gold: #d4a843;
+  --masters-cream: #fdf6e3;
+  --masters-white: #ffffff;
   --orange: #e67e22;
-  --red: #e74c3c;
-  --dark: #1a1a2e;
-  --card-bg: #16213e;
-  --text: #eee;
-  --text-muted: #aaa;
-  --accent: #0f3460;
+  --red: #c0392b;
+  --dark: #002a1e;
+  --card-bg: #fff;
+  --text: #1a1a1a;
+  --text-muted: #5a6b5a;
+  --accent: #006747;
+  --green: #006747;
+  --yellow: #d4a843;
 }
 
 * {
@@ -19,26 +27,31 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--dark);
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--masters-cream);
   color: var(--text);
   min-height: 100vh;
 }
 
 header {
   text-align: center;
-  padding: 2rem 1rem;
-  background: var(--accent);
+  padding: 2.5rem 1rem;
+  background: linear-gradient(135deg, var(--masters-green), var(--masters-dark-green));
+  border-bottom: 4px solid var(--masters-yellow);
 }
 
 header h1 {
-  font-size: 2rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.4rem;
   margin-bottom: 0.5rem;
+  color: var(--masters-yellow);
+  letter-spacing: 1px;
 }
 
 .subtitle {
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.85);
   font-size: 1.1rem;
+  font-weight: 300;
 }
 
 /* Search Section */
@@ -58,16 +71,54 @@ header h1 {
 
 .or-divider {
   color: var(--text-muted);
+  font-style: italic;
 }
 
 #zip-input {
   padding: 0.6rem 1rem;
-  border: 2px solid var(--accent);
+  border: 2px solid var(--masters-green);
   border-radius: 6px;
-  background: var(--card-bg);
+  background: var(--masters-white);
   color: var(--text);
   font-size: 1rem;
   width: 140px;
+}
+
+#zip-input:focus {
+  outline: none;
+  border-color: var(--masters-yellow);
+  box-shadow: 0 0 0 3px rgba(242, 199, 92, 0.3);
+}
+
+/* Date Picker */
+.date-picker-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.date-picker-row label {
+  font-weight: 700;
+  color: var(--masters-green);
+  font-size: 0.95rem;
+}
+
+#date-input {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--masters-green);
+  border-radius: 6px;
+  background: var(--masters-white);
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: 'Lato', sans-serif;
+}
+
+#date-input:focus {
+  outline: none;
+  border-color: var(--masters-yellow);
+  box-shadow: 0 0 0 3px rgba(242, 199, 92, 0.3);
 }
 
 .btn {
@@ -76,22 +127,30 @@ header h1 {
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: all 0.2s;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
 }
 
 .btn:hover {
-  opacity: 0.85;
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .btn-primary {
-  background: var(--green);
-  color: #fff;
+  background: var(--masters-green);
+  color: var(--masters-yellow);
 }
 
 .btn-secondary {
-  background: var(--accent);
-  color: var(--text);
-  border: 2px solid var(--green);
+  background: var(--masters-white);
+  color: var(--masters-green);
+  border: 2px solid var(--masters-green);
+}
+
+.btn-secondary:hover {
+  background: var(--masters-green);
+  color: var(--masters-yellow);
 }
 
 .filters {
@@ -103,13 +162,24 @@ header h1 {
   flex-wrap: wrap;
 }
 
+.filters label {
+  font-weight: 700;
+  color: var(--masters-green);
+}
+
 .filters select {
   padding: 0.5rem;
   border-radius: 6px;
-  background: var(--card-bg);
+  background: var(--masters-white);
   color: var(--text);
-  border: 2px solid var(--accent);
+  border: 2px solid var(--masters-green);
   font-size: 0.95rem;
+  font-family: 'Lato', sans-serif;
+}
+
+.filters select:focus {
+  outline: none;
+  border-color: var(--masters-yellow);
 }
 
 /* Status Bar */
@@ -141,17 +211,37 @@ header h1 {
   grid-template-columns: 1fr auto;
   gap: 1rem;
   align-items: center;
-  border-left: 5px solid var(--green);
+  border-left: 5px solid var(--masters-green);
+  box-shadow: 0 2px 8px rgba(0, 103, 71, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.course-card.crowd-low    { border-left-color: var(--green); }
-.course-card.crowd-medium { border-left-color: var(--yellow); }
-.course-card.crowd-high   { border-left-color: var(--orange); }
-.course-card.crowd-very-high { border-left-color: var(--red); }
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 103, 71, 0.15);
+}
+
+.course-card.crowd-low {
+  border-left-color: var(--masters-green);
+}
+
+.course-card.crowd-medium {
+  border-left-color: var(--masters-yellow);
+}
+
+.course-card.crowd-high {
+  border-left-color: var(--orange);
+}
+
+.course-card.crowd-very-high {
+  border-left-color: var(--red);
+}
 
 .course-info h2 {
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.25rem;
   margin-bottom: 0.4rem;
+  color: var(--masters-dark-green);
 }
 
 .course-meta {
@@ -169,7 +259,7 @@ header h1 {
 .price {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--green);
+  color: var(--masters-green);
 }
 
 .price-label {
@@ -186,10 +276,25 @@ header h1 {
   margin-top: 0.5rem;
 }
 
-.crowd-badge.low       { background: var(--green); color: #fff; }
-.crowd-badge.medium    { background: var(--yellow); color: #333; }
-.crowd-badge.high      { background: var(--orange); color: #fff; }
-.crowd-badge.very-high { background: var(--red); color: #fff; }
+.crowd-badge.low {
+  background: var(--masters-green);
+  color: #fff;
+}
+
+.crowd-badge.medium {
+  background: var(--masters-yellow);
+  color: #333;
+}
+
+.crowd-badge.high {
+  background: var(--orange);
+  color: #fff;
+}
+
+.crowd-badge.very-high {
+  background: var(--red);
+  color: #fff;
+}
 
 .tee-times {
   margin-top: 0.75rem;
@@ -201,8 +306,10 @@ header h1 {
 footer {
   text-align: center;
   padding: 2rem;
-  color: var(--text-muted);
+  background: var(--masters-dark-green);
+  color: var(--masters-yellow);
   font-size: 0.85rem;
+  border-top: 3px solid var(--masters-yellow);
 }
 
 /* Responsive */
