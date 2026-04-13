@@ -9,7 +9,8 @@
       "pricePerPlayer": 22,
       "crowdLevel": "Low",
       "availableSlots": 10,
-      "nextTeeTimes": ["2:30 PM", "2:40 PM", "3:00 PM", "3:20 PM"]
+      "nextTeeTimes": ["2:30 PM", "2:40 PM", "3:00 PM", "3:20 PM"],
+      "bookingUrl": "https://www.crevecoeurgolf.com"
     },
     {
       "id": "2",
@@ -20,18 +21,20 @@
       "pricePerPlayer": 35,
       "crowdLevel": "Medium",
       "availableSlots": 6,
-      "nextTeeTimes": ["3:10 PM", "3:30 PM", "4:00 PM"]
+      "nextTeeTimes": ["3:10 PM", "3:30 PM", "4:00 PM"],
+      "bookingUrl": "https://www.golfnow.com/tee-times/facility/1702-normandie-golf-club/search"
     },
     {
       "id": "3",
       "name": "Forest Park Golf Course",
       "distance": 10.1,
-      "holes": 18,
+      "holes": 27,
       "type": "Public",
-      "pricePerPlayer": 30,
+      "pricePerPlayer": 32,
       "crowdLevel": "High",
       "availableSlots": 3,
-      "nextTeeTimes": ["3:50 PM", "4:20 PM"]
+      "nextTeeTimes": ["3:50 PM", "4:20 PM"],
+      "bookingUrl": "https://arcisgolf.com/clubs/the_courses_at_forest_park/home"
     },
     {
       "id": "4",
@@ -42,7 +45,8 @@
       "pricePerPlayer": 59,
       "crowdLevel": "Low",
       "availableSlots": 12,
-      "nextTeeTimes": ["2:20 PM", "2:40 PM", "3:00 PM", "3:20 PM", "3:40 PM"]
+      "nextTeeTimes": ["2:20 PM", "2:40 PM", "3:00 PM", "3:20 PM", "3:40 PM"],
+      "bookingUrl": "https://www.golfnow.com/tee-times/facility/4543-tapawingo-national-golf-club/search"
     },
     {
       "id": "5",
@@ -53,40 +57,188 @@
       "pricePerPlayer": 28,
       "crowdLevel": "Very High",
       "availableSlots": 1,
-      "nextTeeTimes": ["4:50 PM"]
+      "nextTeeTimes": ["4:40 PM"],
+      "bookingUrl": "https://www.ruthparkgolf.org"
     },
     {
       "id": "6",
-      "name": "Quail Creek Golf Course",
-      "distance": 12.7,
-      "holes": 18,
-      "type": "Public",
-      "pricePerPlayer": 42,
-      "crowdLevel": "Medium",
-      "availableSlots": 5,
-      "nextTeeTimes": ["3:00 PM", "3:30 PM", "4:10 PM"]
-    },
-    {
-      "id": "7",
       "name": "Gateway National Golf Links",
       "distance": 18.2,
       "holes": 18,
       "type": "Public",
       "pricePerPlayer": 55,
       "crowdLevel": "Low",
-      "availableSlots": 9,
-      "nextTeeTimes": ["2:30 PM", "2:50 PM", "3:10 PM", "3:40 PM"]
+      "availableSlots": 14,
+      "nextTeeTimes": ["2:30 PM", "2:50 PM", "3:10 PM", "3:40 PM"],
+      "bookingUrl": "https://gatewaynational.com"
+    },
+    {
+      "id": "7",
+      "name": "Eagle Springs Golf Course",
+      "distance": 12.4,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 38,
+      "crowdLevel": "Medium",
+      "availableSlots": 5,
+      "nextTeeTimes": ["3:00 PM", "3:20 PM", "3:50 PM"],
+      "bookingUrl": "https://www.eaglesprings.com"
     },
     {
       "id": "8",
-      "name": "Bogey Hills Country Club",
-      "distance": 22.4,
+      "name": "The Quarry at Crystal Springs",
+      "distance": 5.6,
+      "holes": 9,
+      "type": "Public",
+      "pricePerPlayer": 20,
+      "crowdLevel": "Low",
+      "availableSlots": 8,
+      "nextTeeTimes": ["2:40 PM", "3:00 PM", "3:20 PM", "3:40 PM"],
+      "bookingUrl": "https://www.quarrygc.com"
+    },
+    {
+      "id": "9",
+      "name": "Ballwin Golf Course",
+      "distance": 11.7,
       "holes": 18,
-      "type": "Semi-Private",
-      "pricePerPlayer": 65,
+      "type": "Public",
+      "pricePerPlayer": 34,
+      "crowdLevel": "Medium",
+      "availableSlots": 4,
+      "nextTeeTimes": ["3:10 PM", "3:40 PM", "4:10 PM"],
+      "bookingUrl": "https://www.ballwingolfcourse.com/book-a-tee-time/"
+    },
+    {
+      "id": "10",
+      "name": "Quail Creek Golf Club",
+      "distance": 16.8,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 42,
+      "crowdLevel": "Low",
+      "availableSlots": 9,
+      "nextTeeTimes": ["2:20 PM", "2:50 PM", "3:10 PM", "3:30 PM"],
+      "bookingUrl": "https://www.golfnow.com/tee-times/facility/4886-quail-creek-golf-club/search"
+    },
+    {
+      "id": "11",
+      "name": "Aberdeen Golf Club",
+      "distance": 22.5,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 45,
+      "crowdLevel": "Low",
+      "availableSlots": 11,
+      "nextTeeTimes": ["2:10 PM", "2:30 PM", "2:50 PM", "3:20 PM", "3:40 PM"],
+      "bookingUrl": "https://www.golfnow.com/tee-times/facility/5049-aberdeen-golf-club/search"
+    },
+    {
+      "id": "12",
+      "name": "Pevely Farms Golf Club",
+      "distance": 32.1,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 52,
+      "crowdLevel": "Low",
+      "availableSlots": 15,
+      "nextTeeTimes": ["2:00 PM", "2:20 PM", "2:40 PM", "3:00 PM", "3:30 PM"],
+      "bookingUrl": "https://www.golfnow.com/tee-times/facility/3803-pevely-farms-golf-club/search"
+    },
+    {
+      "id": "13",
+      "name": "Crescent Farms Golf Course",
+      "distance": 19.4,
+      "holes": 9,
+      "type": "Public",
+      "pricePerPlayer": 18,
+      "crowdLevel": "Medium",
+      "availableSlots": 5,
+      "nextTeeTimes": ["3:00 PM", "3:30 PM", "4:00 PM"],
+      "bookingUrl": "https://www.golfnow.com/tee-times/facility/12671-crescent-farms-golf-course/search"
+    },
+    {
+      "id": "14",
+      "name": "The Landings at Spirit Golf Club",
+      "distance": 24.3,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 40,
+      "crowdLevel": "Medium",
+      "availableSlots": 6,
+      "nextTeeTimes": ["2:40 PM", "3:10 PM", "3:40 PM"],
+      "bookingUrl": "https://www.golfnow.com/tee-times/facility/5023-the-landings-at-spirit-golf-club/search"
+    },
+    {
+      "id": "15",
+      "name": "Saint Ann Golf Course",
+      "distance": 6.3,
+      "holes": 9,
+      "type": "Public",
+      "pricePerPlayer": 16,
       "crowdLevel": "High",
       "availableSlots": 2,
-      "nextTeeTimes": ["4:00 PM"]
+      "nextTeeTimes": ["3:40 PM", "4:10 PM"],
+      "bookingUrl": "https://www.golfnow.com/tee-times/facility/18253-saint-ann-golf-course/search"
+    },
+    {
+      "id": "16",
+      "name": "Crystal Highlands Golf Course",
+      "distance": 35.2,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 36,
+      "crowdLevel": "Low",
+      "availableSlots": 13,
+      "nextTeeTimes": ["2:00 PM", "2:20 PM", "2:50 PM", "3:10 PM", "3:40 PM"],
+      "bookingUrl": "https://www.golfnow.com/tee-times/facility/6127-crystal-highlands-golf-course/search"
+    },
+    {
+      "id": "17",
+      "name": "Paradise Valley Golf Course",
+      "distance": 14.9,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 30,
+      "crowdLevel": "High",
+      "availableSlots": 3,
+      "nextTeeTimes": ["3:30 PM", "4:00 PM"],
+      "bookingUrl": "https://www.golfnow.com/tee-times/facility/18228-paradise-valley-golf-course/search"
+    },
+    {
+      "id": "18",
+      "name": "Arlington Greens Golf Course",
+      "distance": 28.6,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 25,
+      "crowdLevel": "Low",
+      "availableSlots": 10,
+      "nextTeeTimes": ["2:10 PM", "2:30 PM", "3:00 PM", "3:20 PM"],
+      "bookingUrl": "https://www.golfnow.com/tee-times/facility/15282-arlington-greens-golf-course/search"
+    },
+    {
+      "id": "19",
+      "name": "The Highlands Golf & Tennis",
+      "distance": 9.7,
+      "holes": 9,
+      "type": "Public",
+      "pricePerPlayer": 24,
+      "crowdLevel": "Very High",
+      "availableSlots": 1,
+      "nextTeeTimes": ["4:30 PM"],
+      "bookingUrl": "https://www.golfnow.com/tee-times/facility/18256-the-highlands-golf-and-tennis-center/search"
+    },
+    {
+      "id": "20",
+      "name": "Spencer T. Olin Golf Course",
+      "distance": 20.8,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 48,
+      "crowdLevel": "Medium",
+      "availableSlots": 7,
+      "nextTeeTimes": ["2:40 PM", "3:00 PM", "3:30 PM"],
+      "bookingUrl": "https://www.golfnow.com/tee-times/facility/4068-spencer-t-olin-golf-course/search"
     }
   ]
 }
