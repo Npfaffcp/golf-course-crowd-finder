@@ -244,6 +244,19 @@ header h1 {
   color: var(--masters-dark-green);
 }
 
+.course-link {
+  color: var(--masters-dark-green);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.course-link:hover {
+  color: var(--masters-green);
+  text-decoration: underline;
+  text-decoration-color: var(--masters-yellow);
+  text-underline-offset: 3px;
+}
+
 .course-meta {
   display: flex;
   gap: 1.5rem;
