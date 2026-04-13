@@ -26,9 +26,7 @@ function initDateInput() {
   const mm = String(today.getMonth() + 1).padStart(2, '0');
   const dd = String(today.getDate()).padStart(2, '0');
   dateInput.value = `${yyyy}-${mm}-${dd}`;
-  // Set min to today
   dateInput.min = `${yyyy}-${mm}-${dd}`;
-  // Set max to 14 days from now
   const maxDate = new Date(today);
   maxDate.setDate(maxDate.getDate() + 14);
   const maxYyyy = maxDate.getFullYear();
@@ -48,16 +46,10 @@ dateInput.addEventListener('change', () => {
   }
 });
 
-/**
- * Get the selected date as a formatted string
- */
 function getSelectedDate() {
   return dateInput.value;
 }
 
-/**
- * Detect user location via browser Geolocation API
- */
 function detectLocation() {
   showStatus('Detecting your location...');
   if (!navigator.geolocation) {
@@ -78,9 +70,6 @@ function detectLocation() {
   );
 }
 
-/**
- * Search by zip code - convert zip to lat/lng then fetch courses
- */
 async function searchByZip() {
   const zip = zipInput.value.trim();
   if (zip.length !== 5 || isNaN(zip)) {
@@ -102,16 +91,11 @@ async function searchByZip() {
   }
 }
 
-/**
- * Fetch courses near the given coordinates
- */
 async function fetchCourses(lat, lng) {
   const radius = radiusSelect.value;
   const selectedDate = getSelectedDate();
   showStatus(`Finding golf courses within ${radius} miles for ${selectedDate}...`);
   try {
-    // TODO: Replace with actual API endpoint that accepts date
-    // const response = await fetch(`/api/courses?lat=${lat}&lng=${lng}&radius=${radius}&date=${selectedDate}`);
     const response = await fetch('../data/sample-courses.json');
     const data = await response.json();
     courses = data.courses;
@@ -127,9 +111,6 @@ async function fetchCourses(lat, lng) {
   }
 }
 
-/**
- * Render course cards to the DOM
- */
 function renderCourses(courseData) {
   const sortBy = sortSelect.value;
   const sorted = sortCourses([...courseData], sortBy);
@@ -137,11 +118,12 @@ function renderCourses(courseData) {
   courseList.innerHTML = sorted.map(course => {
     const crowdClass = getCrowdClass(course.crowdLevel);
     const badgeClass = course.crowdLevel.toLowerCase().replace(' ', '-');
+    const bookingUrl = course.bookingUrl || '#';
 
     return `
       <div class="course-card ${crowdClass}">
         <div class="course-info">
-          <h2>${course.name}</h2>
+          <h2><a href="${bookingUrl}" target="_blank" rel="noopener noreferrer" class="course-link">${course.name}</a></h2>
           <div class="course-meta">
             <span>${course.distance} mi away</span>
             <span>${course.holes} holes</span>
@@ -159,9 +141,6 @@ function renderCourses(courseData) {
   }).join('');
 }
 
-/**
- * Sort courses based on selected criteria
- */
 function sortCourses(data, sortBy) {
   switch (sortBy) {
     case 'crowd-low':
@@ -176,9 +155,6 @@ function sortCourses(data, sortBy) {
   }
 }
 
-/**
- * Get CSS class for crowd level border color
- */
 function getCrowdClass(level) {
   switch (level) {
     case 'Low': return 'crowd-low';
@@ -189,9 +165,6 @@ function getCrowdClass(level) {
   }
 }
 
-/**
- * Show/hide status bar with a message
- */
 function showStatus(message) {
   statusBar.classList.remove('hidden');
   statusMessage.textContent = message;
