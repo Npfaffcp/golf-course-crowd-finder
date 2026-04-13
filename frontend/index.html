@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golf Course Crowd Finder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Golf Course Crowd Finder</h1>
+    <p class="subtitle">Find the least crowded course near you at the best price</p>
+  </header>
+
+  <main>
+    <section class="search-section">
+      <div class="location-controls">
+        <button id="detect-location" class="btn btn-primary">Use My Location</button>
+        <span class="or-divider">or</span>
+        <input type="text" id="zip-input" placeholder="Enter zip code" maxlength="5">
+        <button id="search-btn" class="btn btn-secondary">Search</button>
+      </div>
+      <div class="filters">
+        <label for="sort-select">Sort by:</label>
+        <select id="sort-select">
+          <option value="crowd-low">Least Crowded</option>
+          <option value="price-low">Lowest Price</option>
+          <option value="distance">Closest</option>
+        </select>
+        <label for="radius-select">Within:</label>
+        <select id="radius-select">
+          <option value="10">10 miles</option>
+          <option value="25" selected>25 miles</option>
+          <option value="50">50 miles</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="status-bar" class="status-bar hidden">
+      <p id="status-message">Searching for courses...</p>
+    </section>
+
+    <section id="course-list" class="course-list">
+      <!-- Course cards rendered here by app.js -->
+    </section>
+  </main>
+
+  <footer>
+    <p>Golf Course Crowd Finder &copy; 2026 | Data from tee-time booking APIs</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
