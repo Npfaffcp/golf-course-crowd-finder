@@ -1,0 +1,92 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "name": "Creve Coeur Golf Course",
+      "distance": 1.2,
+      "holes": 9,
+      "type": "Public",
+      "pricePerPlayer": 22,
+      "crowdLevel": "Low",
+      "availableSlots": 10,
+      "nextTeeTimes": ["2:30 PM", "2:40 PM", "3:00 PM", "3:20 PM"]
+    },
+    {
+      "id": "2",
+      "name": "Normandie Golf Club",
+      "distance": 8.5,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 35,
+      "crowdLevel": "Medium",
+      "availableSlots": 6,
+      "nextTeeTimes": ["3:10 PM", "3:30 PM", "4:00 PM"]
+    },
+    {
+      "id": "3",
+      "name": "Forest Park Golf Course",
+      "distance": 10.1,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 30,
+      "crowdLevel": "High",
+      "availableSlots": 3,
+      "nextTeeTimes": ["3:50 PM", "4:20 PM"]
+    },
+    {
+      "id": "4",
+      "name": "Tapawingo National Golf Club",
+      "distance": 15.3,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 59,
+      "crowdLevel": "Low",
+      "availableSlots": 12,
+      "nextTeeTimes": ["2:20 PM", "2:40 PM", "3:00 PM", "3:20 PM", "3:40 PM"]
+    },
+    {
+      "id": "5",
+      "name": "Ruth Park Golf Course",
+      "distance": 3.8,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 28,
+      "crowdLevel": "Very High",
+      "availableSlots": 1,
+      "nextTeeTimes": ["4:50 PM"]
+    },
+    {
+      "id": "6",
+      "name": "Quail Creek Golf Course",
+      "distance": 12.7,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 42,
+      "crowdLevel": "Medium",
+      "availableSlots": 5,
+      "nextTeeTimes": ["3:00 PM", "3:30 PM", "4:10 PM"]
+    },
+    {
+      "id": "7",
+      "name": "Gateway National Golf Links",
+      "distance": 18.2,
+      "holes": 18,
+      "type": "Public",
+      "pricePerPlayer": 55,
+      "crowdLevel": "Low",
+      "availableSlots": 9,
+      "nextTeeTimes": ["2:30 PM", "2:50 PM", "3:10 PM", "3:40 PM"]
+    },
+    {
+      "id": "8",
+      "name": "Bogey Hills Country Club",
+      "distance": 22.4,
+      "holes": 18,
+      "type": "Semi-Private",
+      "pricePerPlayer": 65,
+      "crowdLevel": "High",
+      "availableSlots": 2,
+      "nextTeeTimes": ["4:00 PM"]
+    }
+  ]
+}
