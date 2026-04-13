@@ -1,0 +1,216 @@
+/* Golf Course Crowd Finder - Styles */
+
+:root {
+  --green: #2ecc71;
+  --yellow: #f1c40f;
+  --orange: #e67e22;
+  --red: #e74c3c;
+  --dark: #1a1a2e;
+  --card-bg: #16213e;
+  --text: #eee;
+  --text-muted: #aaa;
+  --accent: #0f3460;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--dark);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--accent);
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* Search Section */
+.search-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.location-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.or-divider {
+  color: var(--text-muted);
+}
+
+#zip-input {
+  padding: 0.6rem 1rem;
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 1rem;
+  width: 140px;
+}
+
+.btn {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: var(--accent);
+  color: var(--text);
+  border: 2px solid var(--green);
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filters select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 2px solid var(--accent);
+  font-size: 0.95rem;
+}
+
+/* Status Bar */
+.status-bar {
+  text-align: center;
+  padding: 1rem;
+  color: var(--text-muted);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Course List */
+.course-list {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.course-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  border-left: 5px solid var(--green);
+}
+
+.course-card.crowd-low    { border-left-color: var(--green); }
+.course-card.crowd-medium { border-left-color: var(--yellow); }
+.course-card.crowd-high   { border-left-color: var(--orange); }
+.course-card.crowd-very-high { border-left-color: var(--red); }
+
+.course-info h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.course-meta {
+  display: flex;
+  gap: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.course-stats {
+  text-align: right;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--green);
+}
+
+.price-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.crowd-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.crowd-badge.low       { background: var(--green); color: #fff; }
+.crowd-badge.medium    { background: var(--yellow); color: #333; }
+.crowd-badge.high      { background: var(--orange); color: #fff; }
+.crowd-badge.very-high { background: var(--red); color: #fff; }
+
+.tee-times {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .course-card {
+    grid-template-columns: 1fr;
+  }
+  .course-stats {
+    text-align: left;
+  }
+}
