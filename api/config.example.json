@@ -1,0 +1,8 @@
+{
+  "googlePlacesApiKey": "YOUR_GOOGLE_PLACES_API_KEY_HERE",
+  "teeTimeApiKey": "YOUR_TEE_TIME_API_KEY_HERE",
+  "teeTimeApiProvider": "golfnow",
+  "defaultRadiusMiles": 25,
+  "crowdScoreLookAheadHours": 4,
+  "mapboxToken": "YOUR_MAPBOX_TOKEN_HERE"
+}
