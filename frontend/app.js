@@ -7,6 +7,7 @@
 const detectBtn = document.getElementById('detect-location');
 const searchBtn = document.getElementById('search-btn');
 const zipInput = document.getElementById('zip-input');
+const dateInput = document.getElementById('date-input');
 const sortSelect = document.getElementById('sort-select');
 const radiusSelect = document.getElementById('radius-select');
 const courseList = document.getElementById('course-list');
@@ -18,10 +19,41 @@ let userLat = null;
 let userLng = null;
 let courses = [];
 
+// --- Initialize date input to today ---
+function initDateInput() {
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  dateInput.value = `${yyyy}-${mm}-${dd}`;
+  // Set min to today
+  dateInput.min = `${yyyy}-${mm}-${dd}`;
+  // Set max to 14 days from now
+  const maxDate = new Date(today);
+  maxDate.setDate(maxDate.getDate() + 14);
+  const maxYyyy = maxDate.getFullYear();
+  const maxMm = String(maxDate.getMonth() + 1).padStart(2, '0');
+  const maxDd = String(maxDate.getDate()).padStart(2, '0');
+  dateInput.max = `${maxYyyy}-${maxMm}-${maxDd}`;
+}
+initDateInput();
+
 // --- Event Listeners ---
 detectBtn.addEventListener('click', detectLocation);
 searchBtn.addEventListener('click', searchByZip);
 sortSelect.addEventListener('change', () => renderCourses(courses));
+dateInput.addEventListener('change', () => {
+  if (userLat && userLng) {
+    fetchCourses(userLat, userLng);
+  }
+});
+
+/**
+ * Get the selected date as a formatted string
+ */
+function getSelectedDate() {
+  return dateInput.value;
+}
 
 /**
  * Detect user location via browser Geolocation API
@@ -57,8 +89,6 @@ async function searchByZip() {
   }
   showStatus('Looking up zip code...');
   try {
-    // Use a geocoding API to convert zip to coordinates
-    // For MVP, using a simple free geocoding service
     const response = await fetch(`https://api.zippopotam.us/us/${zip}`);
     if (!response.ok) throw new Error('Invalid zip code');
     const data = await response.json();
@@ -74,27 +104,21 @@ async function searchByZip() {
 
 /**
  * Fetch courses near the given coordinates
- * TODO: Replace with real API call to your backend
  */
 async function fetchCourses(lat, lng) {
   const radius = radiusSelect.value;
-  showStatus(`Finding golf courses within ${radius} miles...`);
-
+  const selectedDate = getSelectedDate();
+  showStatus(`Finding golf courses within ${radius} miles for ${selectedDate}...`);
   try {
-    // TODO: Replace this with your actual API endpoint
-    // const response = await fetch(`/api/courses?lat=${lat}&lng=${lng}&radius=${radius}`);
-    // const data = await response.json();
-
-    // For now, load sample data
+    // TODO: Replace with actual API endpoint that accepts date
+    // const response = await fetch(`/api/courses?lat=${lat}&lng=${lng}&radius=${radius}&date=${selectedDate}`);
     const response = await fetch('../data/sample-courses.json');
     const data = await response.json();
     courses = data.courses;
-
     if (courses.length === 0) {
       showStatus('No golf courses found nearby. Try expanding your search radius.');
       return;
     }
-
     showStatus(`Found ${courses.length} courses nearby.`);
     renderCourses(courses);
   } catch (err) {
@@ -113,6 +137,7 @@ function renderCourses(courseData) {
   courseList.innerHTML = sorted.map(course => {
     const crowdClass = getCrowdClass(course.crowdLevel);
     const badgeClass = course.crowdLevel.toLowerCase().replace(' ', '-');
+
     return `
       <div class="course-card ${crowdClass}">
         <div class="course-info">
@@ -122,9 +147,7 @@ function renderCourses(courseData) {
             <span>${course.holes} holes</span>
             <span>${course.type}</span>
           </div>
-          <div class="tee-times">
-            Next tee times: ${course.nextTeeTimes.join(', ')}
-          </div>
+          <div class="tee-times">Next tee times: ${course.nextTeeTimes.join(', ')}</div>
         </div>
         <div class="course-stats">
           <div class="price">$${course.pricePerPlayer}</div>
